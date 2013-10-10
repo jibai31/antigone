@@ -9,4 +9,19 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Antigone::Application.config.secret_key_base = '639a241cb40a3f0a5633f0fa3c99f65b6bb6721127c982ff53afc9fd3845a5ad3f792f7caf80531923f86c04c5da42844a276c08f00c33ffdbffbf83c53f30b2'
+require 'securerandom'
+
+def secure_token
+  token_file = Rails.root.join('.secret')
+  if File.exist?(token_file)
+    # Use the existing token.
+    File.read(token_file).chomp
+  else
+    # Generate a new token and store it in token_file.
+    token = SecureRandom.hex(64)
+    File.write(token_file, token)
+    token
+  end
+end
+
+Antigone::Application.config.secret_key_base = secure_token
