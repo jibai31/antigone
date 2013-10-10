@@ -1,28 +1,5 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+In Greek mythology, Antigone is the daughter of Oedipus and Jocasta, Oedipus' mother. The name has been suggested to mean "opposed to motherhood", "in place of a mother". It may also mean "against men" since men were dominant in the Ancient Greek family structure, and Antigone clearly defied masculine authority, or "anti-generative", from the root gon., "that which generates" (related: gonos, "-gony"; seed, semen).
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Antigone is also a neighborhood of Montpellier, France.
