@@ -1,0 +1,20 @@
+<div id="header">
+  <div id="headerLinks">
+    <%= link_to 'A propos', static_pages_about_path %>
+    <%= link_to 'Blog', 'https://www.facebook.com/PolitiQA' %>
+    <%= link_to 'Questions', '#' %>
+  </div>
+  <div id="headerLogo">
+    <%= image_tag 'logo-big.png' %>
+  </div>
+  <% if content_for?(:header) %>
+    <div id="headerTitle">
+      <h1><%= yield(:header) %></h1>
+    </div>
+  <% end %>
+  <% if content_for?(:subheader) %>
+    <div id="headerSubTitle">
+      <h2><%= yield(:subheader) %></h2>
+    </div>
+  <% end %>
+</div>

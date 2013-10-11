@@ -1,0 +1,9 @@
+body{background: image-url('background.png') repeat-x; padding-top: 70px;}
+#header{height: 200px;}
+#headerLinks{height: 40px;}
+#headerLinks a{float: right; color: white; font-weight: bold; margin: 10px 20px;}
+#headerLogo{text-align: center;}
+#headerTitle, #headerSubTitle{padding-left: 20px;}
+#headerTitle h1, #headerSubTitle h2{font-weight: bold; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+#headerTitle h1{color: white; font-size: 22px; font-family: georgia; margin-bottom: 5px;}
+#headerSubTitle h2{color: gray; font-size: 14px; margin-top: 0;}
