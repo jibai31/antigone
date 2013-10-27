@@ -1,11 +1,11 @@
 <div id="header">
   <div id="headerLinks">
-    <%= link_to 'A propos', static_pages_about_path %>
+    <%= link_to 'A propos', about_path %>
     <%= link_to 'Blog', 'https://www.facebook.com/PolitiQA' %>
     <%= link_to 'Questions', '#' %>
   </div>
   <div id="headerLogo">
-    <%= image_tag 'logo-big.png' %>
+    <%= link_to image_tag('logo-big.png', alt: "PolitiQA"), root_path %>
   </div>
   <% if content_for?(:header) %>
     <div id="headerTitle">

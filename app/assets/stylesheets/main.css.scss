@@ -7,3 +7,9 @@ body{background: image-url('background.png') repeat-x; padding-top: 70px;}
 #headerTitle h1, #headerSubTitle h2{font-weight: bold; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
 #headerTitle h1{color: white; font-size: 22px; font-family: georgia; margin-bottom: 5px;}
 #headerSubTitle h2{color: gray; font-size: 14px; margin-top: 0;}
+footer{margin-top: 45px; padding-top: 5px; border-top: 1px solid #eaeaea; color: #999;}
+footer a{color: #555;}
+footer a:hover{color: #222;}
+footer small{float: left;}
+footer ul{float: right; list-style: none;}
+footer ul li{float: left; margin-left: 10px;}
