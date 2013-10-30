@@ -10,6 +10,9 @@ gem 'jquery-rails', '3.0.4'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'devise'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-facebook'
+gem 'omniauth-twitter'
 
 group :production do
   gem 'rails_12factor', '0.0.2'
