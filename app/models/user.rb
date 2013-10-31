@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   #                :username, :provider, :uid, :avatar
 
   def self.from_omniauth(auth)
+    logger.debug auth.to_yaml
     if user = User.find_by_email(auth.info.email)
       user.provider = auth.provider
       user.uid = auth.uid
