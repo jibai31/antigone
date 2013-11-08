@@ -9,20 +9,32 @@ class User < ActiveRecord::Base
   #                :username, :provider, :uid, :avatar
 
   def self.from_omniauth(auth)
-    logger.debug auth.to_yaml
     if user = User.find_by_email(auth.info.email)
       user.provider = auth.provider
       user.uid = auth.uid
     else
       user = User.create do |user|
-        user.provider = auth.provider
-        user.uid = auth.uid
-        user.username = auth.info.name
-        user.email = auth.info.email
-        user.avatar = auth.info.image
-        user.password = Devise.friendly_token[0..20]
+        user.apply_omniauth(auth)
       end
     end
     user
   end
+
+  def apply_omniauth(auth)
+    self.provider = auth.provider
+    self.uid = auth.uid
+    self.username = auth.info.name
+    self.email = auth.info.email if auth.info.email
+    self.avatar = auth.info.image
+    self.password = Devise.friendly_token[0..20]
+  end
+
+  def password_required?
+    !social_signup_without_email && super
+  end
+
+  def social_signup_without_email
+    !persisted? && uid && email.blank?
+  end
+
 end

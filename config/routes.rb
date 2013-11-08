@@ -4,5 +4,8 @@ Antigone::Application.routes.draw do
   get 'home', :to => 'static_pages#home'
   get 'about', :to => 'static_pages#about'
 
-  devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks" }
+  devise_for :users, controllers: {
+    registrations: "registrations",
+    omniauth_callbacks: "omniauth_callbacks"
+  }
 end

@@ -1,15 +1,18 @@
 class OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   def create_and_sign_user
-    user = User.from_omniauth(request.env["omniauth.auth"])
+    omniauth = request.env["omniauth.auth"]
+    user = User.from_omniauth(omniauth)
     if user.persisted?
       flash.notice = "Bienvenue sur PolitiQA !"
       sign_in_and_redirect user
     else
-      # Should never get there
-      # (omniauth login worked but an exception occurred when saving the user)
-      session["devise.user_attributes"] = user.attributes
-      flash.notice = "You are almost Done! Please provide a password to finish setting up your account"
+      # User validation failed
+      # The oauth info did not contain any email (eg, Twitter account)
+      # Backup the API data for later use
+      session["devise.omniauth"] = omniauth.except("extra")
+
+      flash.notice = "C'est presque bon ! Entrez un email pour finir votre enregistrement."
       redirect_to new_user_registration_url
     end
   end

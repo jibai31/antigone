@@ -1,5 +1,7 @@
 body{background: image-url('background.png') repeat-x;}
 .navbar-logo{float: left; padding: 10px;}
+.navbar-avatar{padding: 5px 10px !important;}
+.navbar-avatar img{height: 40px; width: 40px;}
 #header{height: 230px;}
 #headerLinks{height: 40px;}
 #headerLinks a{float: right; color: white; font-weight: bold; margin: 10px 20px;}
