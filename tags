@@ -5,11 +5,41 @@
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
 ActiveSupport	test/test_helper.rb	/^class ActiveSupport::TestCase$/;"	c
+AddOmniauthFieldsToUser	db/migrate/20131028193057_add_omniauth_fields_to_user.rb	/^class AddOmniauthFieldsToUser < ActiveRecord::Migration$/;"	c
+AllFiles	coverage/index.html	/^  <a name="AllFiles"><\/a>$/;"	a
 Antigone	config/application.rb	/^module Antigone$/;"	m
 Application	config/application.rb	/^  class Application < Rails::Application$/;"	c	class:Antigone
 ApplicationController	app/controllers/application_controller.rb	/^class ApplicationController < ActionController::Base$/;"	c
 ApplicationHelper	app/helpers/application_helper.rb	/^module ApplicationHelper$/;"	m
+Authentication	app/models/authentication.rb	/^class Authentication < ActiveRecord::Base$/;"	c
+AuthenticationsController	app/controllers/authentications_controller.rb	/^class AuthenticationsController < Devise::OmniauthCallbacksController$/;"	c
+CreateAuthentications	db/migrate/20131108185317_create_authentications.rb	/^class CreateAuthentications < ActiveRecord::Migration$/;"	c
+DeviseCreateUsers	db/migrate/20131027173003_devise_create_users.rb	/^class DeviseCreateUsers < ActiveRecord::Migration$/;"	c
+LayoutHelper	app/helpers/layout_helper.rb	/^module LayoutHelper$/;"	m
+RegistrationsController	app/controllers/registrations_controller.rb	/^class RegistrationsController < Devise::RegistrationsController$/;"	c
+SessionMacros	spec/support/helpers/session_macros.rb	/^module SessionMacros$/;"	m
 StaticPagesController	app/controllers/static_pages_controller.rb	/^class StaticPagesController < ApplicationController$/;"	c
 StaticPagesHelper	app/helpers/static_pages_helper.rb	/^module StaticPagesHelper$/;"	m
-home	app/controllers/static_pages_controller.rb	/^  def home$/;"	f	class:StaticPagesController
+User	app/models/user.rb	/^class User < ActiveRecord::Base$/;"	c
+add_provider!	app/models/user.rb	/^  def add_provider!(auth)$/;"	f	class:User
+apply_omniauth	app/models/user.rb	/^  def apply_omniauth(auth)$/;"	f	class:User
+build_resource	app/controllers/registrations_controller.rb	/^  def build_resource(*args)$/;"	f	class:RegistrationsController
+change	db/migrate/20131027173003_devise_create_users.rb	/^  def change$/;"	f	class:DeviseCreateUsers
+change	db/migrate/20131028193057_add_omniauth_fields_to_user.rb	/^  def change$/;"	f	class:AddOmniauthFieldsToUser
+change	db/migrate/20131108185317_create_authentications.rb	/^  def change$/;"	f	class:CreateAuthentications
+create_user	spec/support/helpers/session_macros.rb	/^  def create_user(email, password, username = nil)$/;"	f	class:SessionMacros
+create_user_with_provider	spec/support/helpers/session_macros.rb	/^  def create_user_with_provider(email, provider, username = nil)$/;"	f	class:SessionMacros
+facebook	app/controllers/authentications_controller.rb	/^  def facebook$/;"	f	class:AuthenticationsController
+google_oauth2	app/controllers/authentications_controller.rb	/^  def google_oauth2$/;"	f	class:AuthenticationsController
+page_should_display_sign_in_error	spec/support/helpers/session_macros.rb	/^  def page_should_display_sign_in_error$/;"	f	class:SessionMacros
+password_required?	app/models/user.rb	/^  def password_required?$/;"	f	class:User
 secure_token	config/initializers/secret_token.rb	/^def secure_token$/;"	f
+sign_in_with	spec/support/helpers/session_macros.rb	/^  def sign_in_with(email, password)$/;"	f	class:SessionMacros
+sign_in_with_provider	spec/support/helpers/session_macros.rb	/^  def sign_in_with_provider(provider)$/;"	f	class:SessionMacros
+sign_up_with	spec/support/helpers/session_macros.rb	/^  def sign_up_with(email, password, password_confirmation = nil)$/;"	f	class:SessionMacros
+try_sign_in_user	app/controllers/authentications_controller.rb	/^  def try_sign_in_user$/;"	f	class:AuthenticationsController
+twitter	app/controllers/authentications_controller.rb	/^  def twitter$/;"	f	class:AuthenticationsController
+update_with_password	app/models/user.rb	/^  def update_with_password(params, *options)$/;"	f	class:User
+user_should_be_signed_in	spec/support/helpers/session_macros.rb	/^  def user_should_be_signed_in$/;"	f	class:SessionMacros
+user_should_be_signed_in_as	spec/support/helpers/session_macros.rb	/^  def user_should_be_signed_in_as username$/;"	f	class:SessionMacros
+user_should_be_signed_out	spec/support/helpers/session_macros.rb	/^  def user_should_be_signed_out$/;"	f	class:SessionMacros

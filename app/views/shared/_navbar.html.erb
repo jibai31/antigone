@@ -27,7 +27,7 @@
           <% end %>
         </li>
       <% else %>
-        <li><%= link_to "S'enregistrer", new_user_session_path %></li>
+        <li><%= link_to "S'enregistrer", '#', 'data-toggle' => "modal", 'data-target' => "#signinModal" %></li>
       <% end %>
       <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Autres <b class="caret"></b></a>
@@ -35,9 +35,28 @@
           <li><a href="#">Action</a></li>
           <li><a href="#">Another action</a></li>
           <li><a href="#">Something else here</a></li>
-          <li><%= link_to 'Se déconnecter', destroy_user_session_path, :method => :delete, data: { confirm: "Etes-vous sûr de vouloir vous déconnecter ?" } %></li>
+          <% if user_signed_in? %>
+            <li><%= link_to 'Se déconnecter', destroy_user_session_path, :method => :delete, data: { confirm: "Etes-vous sûr de vouloir vous déconnecter ?" } %></li>
+          <% end %>
         </ul>
       </li>
     </ul>
   </div><!-- /.navbar-collapse -->
 </nav>
+
+<!-- Sign in form -->
+<% unless user_signed_in? %>
+<div class="modal fade" id="signinModal" tabindex="-1" role="dialog" aria-labelledby="signinModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="signinModalLabel">Enregistrez-vous</h4>
+      </div>
+      <div class="modal-body">
+        <%= render 'shared/signin' %>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>
